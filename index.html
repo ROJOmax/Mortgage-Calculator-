@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js" defer></script>
+    <title>Morgtage Repay</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="mortgage-calculator">
+        <div class="first_row_flex">
+          <h3>Mortgage Calculator</h3>
+          <p id="clearAll">Clear All</p>
+        </div>
+        <form action="" class="mortgage_amount" id="mortgage-amount">
+          <label for="pound-amount">Mortgage Amount</label>
+          <input
+            type="text"
+            id="mortgage_amount_id"
+            required=""
+            autocomplete="off"
+            placeholder=""
+          />
+        </form>
+
+        <div class="mortgage_term_rate">
+          <form action="" class="mortgage_term">
+            <label for="years">Mortgage Term</label> <br />
+            <input
+              type="text"
+              id="mortgage_term_id"
+              required=""
+              autocomplete="off"
+              placeholder=""
+            />
+          </form>
+          <form action="" class="interest_rate">
+            <label for="rate">Interest Rate</label> <br />
+            <input
+              type="text"
+              id="interest_rate_id"
+              required=""
+              autocomplete="off"
+              placeholder=""
+            />
+          </form>
+        </div>
+        <div class="mortgage_type">
+          <form action="" class="mortgage_type_form">
+            <input type="radio" id="repayment" required="" />
+            <label for="repayment">Repayemnt</label> <br />
+            <input type="radio" id="interest_only" required="" />
+            <label for="interest_only">Interest Only</label>
+          </form>
+        </div>
+        <button id="btn" class="calculate_btn">
+          <img
+            src="icon-calculator.svg"
+            alt=""
+            style="height: 20px; width: 20px"
+          />
+          Caluculate Repayments
+        </button>
+      </div>
+      <div class="img_container">
+        <img src="illustration-empty.svg" alt="" />
+        <h2>Results shown here</h2>
+        <p class="results_text">
+          Complete the form and click “calculate repayments” to see what your
+          monthly repayments would be.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

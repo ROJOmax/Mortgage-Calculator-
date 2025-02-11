@@ -1,0 +1,147 @@
+:root {
+  /* Colors */
+
+  /* Primary */
+  --Lime: hsl(61, 70%, 52%);
+  --Red: hsl(4, 69%, 50%);
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Slate-100: hsl(202, 86%, 94%);
+  --Slate-300: hsl(203, 41%, 72%);
+  --Slate-500: hsl(200, 26%, 54%);
+  --Slate-700: hsl(200, 24%, 40%);
+  --Slate-900: hsl(202, 55%, 16%);
+
+  /* Font Family */
+  --ff-main: "Plus Jakarta Sans", serif;
+
+  /* Font Size */
+
+  --fs-main: var(var(--spacing-200));
+
+  /* Font weight */
+  --fw-normal: 500;
+  --fw-bold: 700;
+
+  /* Text Preset */
+
+  --text-preset-1: 3.5rem;
+  --text-preset-2: 1.5rem;
+  --text-preset-3: 1.125rem;
+  --text-preset-4: 1rem;
+  --text-preset-5: 0.875rem;
+
+  /* Spacing */
+  --spacing-100: 0.5rem;
+  --spacing-150: 0.75rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing--500: 2.5rem;
+}
+
+body {
+  font-family: var(--ff-main);
+  font-size: var(--text-preset-3);
+  font-weight: var(--fw-normal);
+  color: var(--Slate-900);
+  background: var(--color-slate-100, #e4f4fd);
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  max-width: 60rem;
+  width: 100%;
+  height: 90vh;
+  margin: 0 auto;
+  background: var(--color-white, #fff);
+  border-radius: 1.5rem;
+}
+
+@media (min-width: 100em) {
+  .container {
+    height: 70vh;
+  }
+}
+
+.mortgage-calculator,
+.img_container {
+  flex: 1; /* Each takes up equal space */
+  width: 50%;
+}
+
+/* Mortgage Calculator Left Side Styling */
+
+.mortgage-calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--spacing--500);
+  gap: var(--spacing-300, 24px);
+}
+
+.first_row_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.first_row_flex h3 {
+  font-size: var(--font-size-text-preset-2, 24px);
+}
+
+.first_row_flex p {
+  font-size: var(--font-size-text-preset-4, 16px);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.first_row_flex p:hover {
+  color: var(--color-slate-700, #4e6e7e);
+}
+
+.first_row_flex p:active {
+  color: var(--color-slate-700, #4e6e7e);
+}
+
+.mortgage_amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: var(--spacing-100);
+
+  position: relative;
+}
+
+.mortgage_amount label {
+  color: var(--color-slate-700, #4e6e7e);
+  font-size: var(--font-size-text-preset-4, 16px);
+}
+
+.mortgage_amount input {
+  align-self: stretch;
+  padding: var(--spacing-100) 0rem;
+  border: 1px solid var(--color-slate-500, #6b94a8);
+
+  border-radius: 4px;
+}
+
+.img_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--White);
+  gap: var(--spacing-300);
+  border-radius: 0rem 1.5rem 1.5rem 5rem;
+  background: var(--color-slate-900, #133041);
+  padding: var(--spacing--500);
+}
