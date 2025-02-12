@@ -24,6 +24,7 @@
         </div>
         <form action="" class="mortgage_amount" id="mortgage-amount">
           <label for="pound-amount">Mortgage Amount</label>
+          <!-- <p class="__dollar">$</p> -->
           <input
             type="text"
             id="mortgage_amount_id"
@@ -35,7 +36,7 @@
 
         <div class="mortgage_term_rate">
           <form action="" class="mortgage_term">
-            <label for="years">Mortgage Term</label> <br />
+            <label for="years">Mortgage Term</label>
             <input
               type="text"
               id="mortgage_term_id"
@@ -45,7 +46,7 @@
             />
           </form>
           <form action="" class="interest_rate">
-            <label for="rate">Interest Rate</label> <br />
+            <label for="rate">Interest Rate</label>
             <input
               type="text"
               id="interest_rate_id"
@@ -55,14 +56,31 @@
             />
           </form>
         </div>
-        <div class="mortgage_type">
-          <form action="" class="mortgage_type_form">
-            <input type="radio" id="repayment" required="" />
+
+        <form action="" class="mortgage_type_form">
+          <label for="type">Mortgage Type</label> <br />
+          <div class="radio_group">
+            <input
+              type="radio"
+              id="repayment"
+              required=""
+              class="_repayment"
+              name="mortgage_type"
+            />
             <label for="repayment">Repayemnt</label> <br />
-            <input type="radio" id="interest_only" required="" />
+          </div>
+          <div class="radio_group">
+            <input
+              type="radio"
+              name="mortgage_type"
+              id="interest_only"
+              required=""
+              class="interest"
+            />
             <label for="interest_only">Interest Only</label>
-          </form>
-        </div>
+          </div>
+        </form>
+
         <button id="btn" class="calculate_btn">
           <img
             src="icon-calculator.svg"
