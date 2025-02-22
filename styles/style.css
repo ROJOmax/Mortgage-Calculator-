@@ -102,17 +102,18 @@ body {
 }
 
 .first_row_flex p {
+  color: var(--color-slate-700, #4e6e7e);
   font-size: var(--font-size-text-preset-4, 16px);
   text-decoration: underline;
   cursor: pointer;
 }
 
 .first_row_flex p:hover {
-  color: var(--color-slate-700, #4e6e7e);
+  color: var(--color-slate-900, #133041);
 }
 
 .first_row_flex p:active {
-  color: var(--color-slate-700, #4e6e7e);
+  color: var(--color-slate-900, #133041);
 }
 
 /* Mortgage form Styling */
@@ -123,8 +124,6 @@ body {
   align-items: flex-start;
   align-self: stretch;
   gap: var(--spacing-100);
-
-  position: relative;
 }
 
 .mortgage_amount label {
@@ -132,11 +131,54 @@ body {
   font-size: var(--font-size-text-preset-4, 16px);
 }
 
-.mortgage_amount input {
-  align-self: stretch;
-  padding: var(--spacing-100) 0rem;
-  border: 1px solid var(--color-slate-500, #6b94a8);
-  border-radius: 4px;
+/* Input group styling */
+.input-group {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.input-group > span,
+.input-group .mortgage_amount_input {
+  white-space: nowrap; /* Prevents text wrapping in span or input */
+  display: block;
+}
+
+.input-group > span {
+  text-align: center;
+  padding: var(--spacing-100) var(--spacing-200);
+  font-size: var(--font-size-text-preset-4, 16px);
+  color: var(--color-slate-700, #4e6e7e);
+  font-weight: var(--fw-bold);
+  background: #e4f4fd;
+  border: 1.3px solid var(--color-slate-500, #6b94a8);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+.input-group .mortgage_amount_input {
+  flex: 1 1 auto; /* Allows input to expand and fill available space */
+  padding: var(--spacing-100) 12px;
+  border: 1.3px solid var(--color-slate-500, #6b94a8);
+  border-radius: 0 4px 4px 0;
+  font-size: var(--font-size-text-preset-4, 16px);
+  transition: border 0.3s ease;
+}
+
+.input-group .mortgage_amount_input:hover {
+  border-color: var(--Slate-900);
+}
+
+.input-group .mortgage_amount_input:focus {
+  outline: none;
+  border-color: var(--Lime);
+}
+
+.input-group:focus-within > span {
+  background: var(--Lime);
+  color: #fff;
+  border-color: var(--Lime);
 }
 
 /* Mortgage term and Interest Rate Styling */
@@ -185,22 +227,59 @@ body {
   flex: 1;
   align-items: center;
   gap: var(--spacing-100);
+  font-weight: var(--fw-bold);
   padding: var(--spacing-150, 16px) var(--spacing-150);
   border: 1px solid var(--color-slate-500, #6b94a8);
   border-radius: 4px;
   transition: border-color 0.3s ease;
 }
 
-.radio_group input[type="radio"] {
+/* .radio_group input[type="radio"] {
   accent-color: var(--Lime);
-  outline: 1px solid var(--Lime);
-}
+} */
 .radio_group:hover {
   border: 1px solid var(--Lime);
 }
 
-.radio_group:active {
-  background-color: var(--Lime);
+/* .radio_group:active {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    ),
+    var(--color-lime, #d8db2f);
+} */
+
+.radio_group:checked {
+  background-color: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    ),
+    var(--color-lime, #d8db2f);
+}
+
+/* Button Styling */
+
+.calculate_btn {
+  display: flex;
+  padding: var(--spacing-150) var(--spacing-400);
+  gap: var(--spacing-300, 24px);
+  align-items: center;
+  border-radius: 100vmax;
+  border: none;
+  cursor: pointer;
+  background: var(--Lime, #d8db2f);
+  transition: 0.5s ease;
+}
+
+.calculate_btn:hover {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    ),
+    var(--Lime, #d8db2f);
 }
 
 /* Image Container Styling */
@@ -210,8 +289,18 @@ body {
   align-items: center;
   flex-direction: column;
   color: var(--White);
-  gap: var(--spacing-300);
+  gap: var(--spacing-200);
   border-radius: 0rem 1.5rem 1.5rem 5rem;
   background: var(--color-slate-900, #133041);
   padding: var(--spacing--500);
+}
+
+.img_container h2 {
+  font-size: var(--font-size-text-preset-2, 24px);
+}
+
+.img_container p {
+  color: var(--color-slate-300, #9abed5);
+  font-size: var(--font-size-text-preset-4, 16px);
+  text-align: center;
 }

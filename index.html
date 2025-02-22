@@ -24,14 +24,18 @@
         </div>
         <form action="" class="mortgage_amount" id="mortgage-amount">
           <label for="pound-amount">Mortgage Amount</label>
-          <!-- <p class="__dollar">$</p> -->
-          <input
-            type="text"
-            id="mortgage_amount_id"
-            required=""
-            autocomplete="off"
-            placeholder=""
-          />
+          <div class="input-group">
+            <span>€</span>
+            <input
+              type="text"
+              class="mortgage_amount_input"
+              id="mortgage_amount_id"
+              required=""
+              autocomplete="off"
+              placeholder=""
+              data-type="currency"
+            />
+          </div>
         </form>
 
         <div class="mortgage_term_rate">
