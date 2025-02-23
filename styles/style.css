@@ -86,7 +86,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   padding: var(--spacing--500);
-  gap: var(--spacing-300, 24px);
+  gap: var(--spacing-200);
 }
 
 /* Title Styling */
@@ -184,6 +184,29 @@ body {
   border-color: var(--Lime);
 }
 
+/* Error State Styling */
+.error-state > .error {
+  visibility: hidden;
+  color: red;
+  font-size: 12px;
+}
+
+.prefix-euro .mortgage_amount_input:not(:focus):invalid {
+  border: 2px solid red;
+}
+
+.prefix-euro:has(.mortgage_amount_input:not(:focus):invalid) > span {
+  border: 2px solid red;
+  background: red;
+  color: #fff;
+  border-right: none;
+}
+
+.error-state:has(:not(:focus):invalid) > .error {
+  visibility: visible;
+  display: block;
+}
+
 /* Mortgage term and Interest Rate Styling */
 .mortgage_term_rate {
   display: flex;
@@ -260,6 +283,19 @@ body {
   background: var(--Lime);
   color: #fff;
   border-color: var(--Lime);
+}
+
+/* Mortgage term error state styling */
+
+.prefix input:not(:focus):invalid {
+  border: 2px solid red;
+}
+
+.prefix:has(input:not(:focus):invalid) > span {
+  border: 2px solid red;
+  background: red;
+  color: #fff;
+  border-right: none;
 }
 
 /* Mortgage Type Styling */
@@ -339,7 +375,7 @@ input[type="radio"]:checked {
   border: none;
   cursor: pointer;
   background: var(--Lime, #d8db2f);
-  transition: 0.5s ease;
+  transition: background 0.3s ease-out;
 }
 
 .calculate_btn:hover {

@@ -22,7 +22,11 @@
           <h3>Mortgage Calculator</h3>
           <p id="clearAll">Clear All</p>
         </div>
-        <form action="" class="mortgage_amount" id="mortgage-amount">
+        <form
+          action=""
+          class="mortgage_amount error-state"
+          id="mortgage-amount"
+        >
           <label for="pound-amount">Mortgage Amount</label>
           <div class="prefix-euro">
             <span>€</span>
@@ -36,10 +40,11 @@
               data-type="currency"
             />
           </div>
+          <span class="error">This field is required</span>
         </form>
 
         <div class="mortgage_term_rate">
-          <form action="" class="mortgage_term">
+          <form action="" class="mortgage_term error-state">
             <label for="years">Mortgage Term</label>
             <div class="prefix">
               <input
@@ -51,8 +56,9 @@
               />
               <span>years</span>
             </div>
+            <span class="error">This field is required</span>
           </form>
-          <form action="" class="interest_rate">
+          <form action="" class="interest_rate error-state">
             <label for="rate">Interest Rate</label>
             <div class="prefix">
               <input
@@ -64,6 +70,7 @@
               />
               <span class="rate">%</span>
             </div>
+            <span class="error">This field is required</span>
           </form>
         </div>
 
@@ -73,7 +80,6 @@
             <input
               type="radio"
               id="repayment"
-              required=""
               class="_repayment"
               name="mortgage_type"
             />
