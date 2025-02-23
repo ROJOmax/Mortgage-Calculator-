@@ -32,6 +32,7 @@
   --text-preset-5: 0.875rem;
 
   /* Spacing */
+  --spacing-50: 0.45rem;
   --spacing-100: 0.5rem;
   --spacing-150: 0.75rem;
   --spacing-200: 1rem;
@@ -131,20 +132,21 @@ body {
   font-size: var(--font-size-text-preset-4, 16px);
 }
 
-/* Input group styling */
-.input-group {
+/* Input prefix styling */
+.prefix-euro {
   position: relative;
   display: flex;
   width: 100%;
 }
 
-.input-group > span,
-.input-group .mortgage_amount_input {
+.prefix-euro > span,
+.prefix-euro .mortgage_amount_input {
   white-space: nowrap; /* Prevents text wrapping in span or input */
   display: block;
+  font-weight: var(--fw-bold);
 }
 
-.input-group > span {
+.prefix-euro > span {
   text-align: center;
   padding: var(--spacing-100) var(--spacing-200);
   font-size: var(--font-size-text-preset-4, 16px);
@@ -157,25 +159,26 @@ body {
   transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
 }
 
-.input-group .mortgage_amount_input {
+.prefix-euro .mortgage_amount_input {
   flex: 1 1 auto; /* Allows input to expand and fill available space */
   padding: var(--spacing-100) 12px;
   border: 1.3px solid var(--color-slate-500, #6b94a8);
+  border-left: none;
   border-radius: 0 4px 4px 0;
   font-size: var(--font-size-text-preset-4, 16px);
   transition: border 0.3s ease;
 }
 
-.input-group .mortgage_amount_input:hover {
+.prefix-euro .mortgage_amount_input:hover {
   border-color: var(--Slate-900);
 }
 
-.input-group .mortgage_amount_input:focus {
+.prefix-euro .mortgage_amount_input:focus {
   outline: none;
   border-color: var(--Lime);
 }
 
-.input-group:focus-within > span {
+.prefix-euro:focus-within > span {
   background: var(--Lime);
   color: #fff;
   border-color: var(--Lime);
@@ -196,19 +199,69 @@ body {
   gap: var(--spacing-100, 0rem);
 }
 
-.mortgage_term input,
-.interest_rate input {
-  width: 100%;
-  padding: var(--spacing-100);
-  border: 1px solid var(--color-slate-500, #6b94a8);
-  border-radius: 4px;
-}
-
 .mortgage_term label,
 .interest_rate label {
   color: var(--color-slate-700, #4e6e7e);
   font-size: var(--font-size-text-preset-4, 16px);
 }
+
+/* input sefix styling */
+
+.prefix {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.prefix > span,
+.prefix input {
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  border: 1px solid var(--color-slate-500, #6b94a8);
+  border-radius: 4px;
+  font-weight: var(--fw-bold);
+}
+
+.prefix > span {
+  text-align: center;
+  width: 35%;
+  padding: var(--spacing-50);
+  font-size: var(--font-size-text-preset-4, 16px);
+  color: var(--color-slate-700, #4e6e7e);
+  font-weight: var(--fw-bold);
+  background: #e4f4fd;
+  border: 1.3px solid var(--color-slate-500, #6b94a8);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+.prefix input {
+  flex: 1 1 auto;
+  padding: var(--spacing-50) var(--spacing-200);
+  border: 1.3px solid var(--color-slate-500, #6b94a8);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  font-size: var(--font-size-text-preset-4, 16px);
+  transition: border 0.3s ease;
+}
+
+.prefix input:hover {
+  border-color: var(--Slate-900);
+}
+
+.prefix input:focus {
+  outline: none;
+  border-color: var(--Lime);
+}
+
+.prefix:focus-within > span {
+  background: var(--Lime);
+  color: #fff;
+  border-color: var(--Lime);
+}
+
 /* Mortgage Type Styling */
 .mortgage_type_form {
   display: flex;
@@ -228,35 +281,51 @@ body {
   align-items: center;
   gap: var(--spacing-100);
   font-weight: var(--fw-bold);
-  padding: var(--spacing-150, 16px) var(--spacing-150);
+  padding: var(--spacing-100) var(--spacing-150);
   border: 1px solid var(--color-slate-500, #6b94a8);
   border-radius: 4px;
   transition: border-color 0.3s ease;
 }
 
-/* .radio_group input[type="radio"] {
-  accent-color: var(--Lime);
-} */
 .radio_group:hover {
   border: 1px solid var(--Lime);
 }
 
-/* .radio_group:active {
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 0.5) 100%
-    ),
-    var(--color-lime, #d8db2f);
-} */
+input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-slate-500, #6b94a8);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
 
-.radio_group:checked {
-  background-color: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 0.5) 100%
-    ),
-    var(--color-lime, #d8db2f);
+input[type="radio"]::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: transparent;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+input[type="radio"]:checked::after {
+  background: var(--Lime);
+}
+
+input[type="radio"]:checked {
+  border: 2px solid var(--Lime);
+}
+
+.radio_group:has(input[type="radio"]:checked) {
+  background: rgba(216, 219, 47, 0.15);
+  border: 2px solid var(--color-lime, #d8db2f);
 }
 
 /* Button Styling */

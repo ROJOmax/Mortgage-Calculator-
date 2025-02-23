@@ -24,7 +24,7 @@
         </div>
         <form action="" class="mortgage_amount" id="mortgage-amount">
           <label for="pound-amount">Mortgage Amount</label>
-          <div class="input-group">
+          <div class="prefix-euro">
             <span>€</span>
             <input
               type="text"
@@ -41,23 +41,29 @@
         <div class="mortgage_term_rate">
           <form action="" class="mortgage_term">
             <label for="years">Mortgage Term</label>
-            <input
-              type="text"
-              id="mortgage_term_id"
-              required=""
-              autocomplete="off"
-              placeholder=""
-            />
+            <div class="prefix">
+              <input
+                type="text"
+                id="mortgage_term_id"
+                required=""
+                autocomplete="off"
+                placeholder=""
+              />
+              <span>years</span>
+            </div>
           </form>
           <form action="" class="interest_rate">
             <label for="rate">Interest Rate</label>
-            <input
-              type="text"
-              id="interest_rate_id"
-              required=""
-              autocomplete="off"
-              placeholder=""
-            />
+            <div class="prefix">
+              <input
+                type="text"
+                id="interest_rate_id"
+                required=""
+                autocomplete="off"
+                placeholder=""
+              />
+              <span class="rate">%</span>
+            </div>
           </form>
         </div>
 
