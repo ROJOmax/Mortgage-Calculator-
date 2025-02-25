@@ -13,20 +13,16 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="main.js" defer></script>
-    <title>Morgtage Repay</title>
+    <title>Mortgage Repay</title>
   </head>
   <body>
     <main class="container">
-      <div class="mortgage-calculator">
+      <form class="mortgage-calculator" id="mortgageForm">
         <div class="first_row_flex">
           <h3>Mortgage Calculator</h3>
           <p id="clearAll">Clear All</p>
         </div>
-        <form
-          action=""
-          class="mortgage_amount error-state"
-          id="mortgage-amount"
-        >
+        <div class="mortgage_amount error-state">
           <label for="pound-amount">Mortgage Amount</label>
           <div class="prefix-euro">
             <span>€</span>
@@ -38,13 +34,14 @@
               autocomplete="off"
               placeholder=""
               data-type="currency"
+              name="amount"
             />
           </div>
           <span class="error">This field is required</span>
-        </form>
+        </div>
 
         <div class="mortgage_term_rate">
-          <form action="" class="mortgage_term error-state">
+          <div class="mortgage_term error-state">
             <label for="years">Mortgage Term</label>
             <div class="prefix">
               <input
@@ -53,12 +50,13 @@
                 required=""
                 autocomplete="off"
                 placeholder=""
+                name="term"
               />
               <span>years</span>
             </div>
             <span class="error">This field is required</span>
-          </form>
-          <form action="" class="interest_rate error-state">
+          </div>
+          <div class="interest_rate error-state">
             <label for="rate">Interest Rate</label>
             <div class="prefix">
               <input
@@ -67,14 +65,15 @@
                 required=""
                 autocomplete="off"
                 placeholder=""
+                name="rate"
               />
               <span class="rate">%</span>
             </div>
             <span class="error">This field is required</span>
-          </form>
+          </div>
         </div>
 
-        <form action="" class="mortgage_type_form">
+        <div class="mortgage_type_form">
           <label for="type">Mortgage Type</label> <br />
           <div class="radio_group">
             <input
@@ -82,37 +81,57 @@
               id="repayment"
               class="_repayment"
               name="mortgage_type"
+              value="repayment"
             />
-            <label for="repayment">Repayemnt</label> <br />
+            <label for="repayment">Repayment</label> <br />
           </div>
           <div class="radio_group">
             <input
               type="radio"
               name="mortgage_type"
               id="interest_only"
-              required=""
               class="interest"
+              value="interest_only"
             />
             <label for="interest_only">Interest Only</label>
           </div>
-        </form>
+        </div>
 
-        <button id="btn" class="calculate_btn">
+        <button type="submit" id="btn" class="calculate_btn">
           <img
             src="icon-calculator.svg"
             alt=""
             style="height: 20px; width: 20px"
           />
-          Caluculate Repayments
+          Calculate Repayments
         </button>
-      </div>
+      </form>
       <div class="img_container">
-        <img src="illustration-empty.svg" alt="" />
+        <!-- <img src="illustration-empty.svg" alt="" />
         <h2>Results shown here</h2>
         <p class="results_text">
           Complete the form and click “calculate repayments” to see what your
           monthly repayments would be.
-        </p>
+        </p> -->
+
+        <!-- Results Styling -->
+        <!-- <div class="result" id="results">
+          <h4>Your results</h4>
+          <p>
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click "calculate
+            repayments" again.
+          </p>
+
+          <div class="result_box">
+            <p>Your monthly repayments</p>
+            <br />
+            <span id="monthyRepyaments">€1,797.74</span>
+            <p>Total you'll repay over the term</p>
+            <br />
+            <span id="totalRepay">€539,322.94</span>
+          </div>
+        </div> -->
       </div>
     </main>
   </body>
